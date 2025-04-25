@@ -1,0 +1,20 @@
+services:
+  dolly:
+    container_name: dolly-dev
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app/dolly
+      - big-clone-bench:/app/dolly/data/big-clone-bench
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+
+volumes:
+  big-clone-bench:
+    external: true

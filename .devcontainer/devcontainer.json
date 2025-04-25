@@ -1,0 +1,21 @@
+{
+    "name": "dolly-dev",
+    "dockerComposeFile": [
+        "../docker-compose.yaml"
+    ],
+    "service": "dolly",
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/app/dolly",
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.flake8",
+                "ms-python.black-formatter",
+                "eamodio.gitlens",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
+}
