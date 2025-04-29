@@ -10,7 +10,7 @@ Code clone detection is a crucial task in software engineering, helping develope
 
 ## 🚧 Work in Progress 🚧
 
-The instructions for the setup are not yet complete and will be pushed until April 29th.
+The instructions for the setup are not yet complete and will be pushed until April 29th at 12:00.
 
 ## License
 
