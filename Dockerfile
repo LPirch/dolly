@@ -33,8 +33,7 @@ COPY . .
 
 RUN python -m venv /root/.venv && \
     source /root/.venv/bin/activate && \
-    pip install --no-cache-dir -e . && \
-    pip install --no-cache-dir -r extra-requirements.txt
+    pip install --no-cache-dir -e .
 
 # download the pre-trained language models
 RUN source /root/.venv/bin/activate && \
