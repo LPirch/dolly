@@ -17,6 +17,12 @@ Code clone detection is a crucial task in software engineering, helping develope
 3. create the docker volumes with `./scripts/00-setup/create_volumes.sh <data_root>`
 4. build and run the docker container with `docker compose up`
 
+NOTES
+- if you're using vscode, you can just build it as a devcontainer.
+- apptainer users can build a sif file from the docker container using the script in `scripts/00-setup/build_sif.sh <output_file>`
+- the setup is slurm-compatible but I didn't find the time to include the respective scripts for launching the jobs
+
+
 ## Usage
 
 The main command is `dolly`, which provides a CLI and a help via `dolly --help`.
