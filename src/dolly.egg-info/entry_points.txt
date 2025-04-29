@@ -1,0 +1,2 @@
+[console_scripts]
+dolly = dolly.cli:app

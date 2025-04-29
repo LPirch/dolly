@@ -4,14 +4,109 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "name": "Python: current file",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
         {
             "name": "train llm",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/src/dolly/train.py",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
             "console": "integratedTerminal",
-            "justMyCode": false
-        }
+            "justMyCode": false,
+            "args": [
+                "train",
+                "--model-name", "llm",
+                "--subsample", "0.01"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            }
+        },
+        {
+            "name": "train gnn",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "train",
+                "--model-name", "gnn",
+                "--subsample", "0.01",
+                "--hf-dir", "/app/dolly/data/big-clone-bench/hf-pyg"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            }
+        },
+        {
+            "name": "parse cpgs",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "dataset", "parse-cpgs",
+                "--num-proc", "1"
+            ],
+        },
+        {
+            "name": "export cpgs",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "dataset", "export-cpgs",
+                "--num-proc", "1"
+            ],
+        },
+        {
+            "name": "to pyg",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "dataset", "to-pyg",
+                "--num-proc", "60"
+            ],
+        },
+        {
+            "name": "embed graphs",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "dataset", "embed-graphs",
+                "--num-proc", "1"
+            ],
+        },
+        {
+            "name": "evaluate llm",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dolly/cli.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "evaluate",
+                "/app/dolly/data/models/llm",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            }
+        },
     ]
 }

@@ -9,7 +9,7 @@ fi
 
 volumes_root=$(realpath $1)
 
-for volume in big-clone-bench; do
+for volume in big-clone-bench dolly-models; do
     if ! docker volume inspect $volume >/dev/null 2>&1; then
         docker volume create $volume --opt type=none --opt device=$volumes_root/$volume --opt o=bind
     else

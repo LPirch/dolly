@@ -9,6 +9,8 @@ dependencies = {file = ["requirements.txt"]}
 [project.scripts]
 dolly = "dolly.cli:app"
 
+[tool.setuptools.package-data]
+cpgtools = ["graphs/joern_scripts/*.sc", "graphs/joern_scripts/*.sh"]
 
 [build-system]
 requires = ["setuptools >= 40.9.0"]

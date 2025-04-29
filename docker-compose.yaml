@@ -7,6 +7,7 @@ services:
     volumes:
       - ./:/app/dolly
       - big-clone-bench:/app/dolly/data/big-clone-bench
+      - dolly-models:/app/dolly/data/models
     ipc: host
     deploy:
       resources:
@@ -17,4 +18,6 @@ services:
 
 volumes:
   big-clone-bench:
+    external: true
+  dolly-models:
     external: true
