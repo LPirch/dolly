@@ -15,7 +15,7 @@ Code clone detection is a crucial task in software engineering, helping develope
   - `big-clone-bench` (output of `tar -xzf big-clone-bench.tar.gz`)
   - `dolly-models` (output of `tar -xzf dolly-models.tar.gz`)
 3. create the docker volumes with `./scripts/00-setup/create_volumes.sh <data_root>`
-4. build and run the docker container with `docker compose up`
+4. build and run the docker container with `docker compose up dolly` (GPU) or `docker compose up dolly-cpu` (CPU)
 
 NOTES
 - if you're using vscode, you can just build it as a devcontainer.

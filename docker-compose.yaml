@@ -15,6 +15,16 @@ services:
           devices:
             - driver: nvidia
               capabilities: [gpu]
+  dolly-cpu:
+    container_name: dolly-cpu-dev
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app/dolly
+      - big-clone-bench:/app/dolly/data/big-clone-bench
+      - dolly-models:/app/dolly/data/models
+    ipc: host
 
 volumes:
   big-clone-bench:
